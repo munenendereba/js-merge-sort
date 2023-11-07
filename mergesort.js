@@ -20,7 +20,7 @@ const merge = (leftArray, rightArray) => {
     );
   }
 
-  return sortedArray.concat(leftArray, rightArray);
+  return [...sortedArray, ...leftArray, ...rightArray];
 };
 
 const inputArr = [3, 5, 2, 90, 4, 7];
