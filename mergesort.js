@@ -15,13 +15,9 @@ const merge = (leftArray, rightArray) => {
   const sortedArray = [];
 
   while (leftArray.length > 0 && rightArray.length > 0) {
-    if (leftArray[0] < rightArray[0]) {
-      sortedArray.push(leftArray[0]);
-      leftArray.splice(0, 1);
-    } else {
-      sortedArray.push(rightArray[0]);
-      rightArray.splice(0, 1);
-    }
+    sortedArray.push(
+      (leftArray[0] < rightArray[0] ? leftArray : rightArray).shift()
+    );
   }
 
   return sortedArray.concat(leftArray, rightArray);
